@@ -1,3 +1,5 @@
+import { fromIsoDate } from "../utils/transformDate";
+
 export default function TableItem({ user }) {
     return (
         <tr>
@@ -12,7 +14,7 @@ export default function TableItem({ user }) {
             <td>{user.lastName}</td>
             <td>{user.email}</td>
             <td>{user.phoneNumber}</td>
-            <td>{user.createdAt}</td>
+            <td>{fromIsoDate(user.createdAt)}</td>
             <td className="actions">
                 <button className="btn edit-btn" title="Edit">
                     <svg
